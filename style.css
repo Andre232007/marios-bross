@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #87ceeb;
+}
+.logo{
+  position: absolute;
+  left: 20%;
+  top: 50px;
+  width: 250px;
+  opacity: 1;
+}
+.pipe {
+  animation: none; 
+}
+.clouds {
+  animation: none; 
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #87ceeb;
+  position: relative;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background-color: #1a9a15;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 400px;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0f7e0c;
+}
+.game-board {
+  width: 100%;
+  height: 500px;
+  top: 85px;
+  border-bottom: 15px solid #1a9a15;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(#87ceeb, #e0e0f6ff);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.itens {
+  flex-grow: 1;
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  animation: pipe-animation 1.5s infinite;
+}
+
+.mario {
+  width: 140px;
+  position: absolute;
+  bottom: 0;
+}
+
+.clouds {
+  width: 550px;
+  position: absolute;
+  animation: clouds-animation 20s infinite;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px; 
+  font-size: 1.5rem;
+  color: #598419;
+  padding: 10px;
+  background: #bdd8e3;
+  border-radius: 10px;
+}
+@keyframes pipe-animation {
+  from {
+      right: -80%;
+  }
+  to {
+      right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+      bottom: 0;
+  }
+  40% {
+      bottom: 180px;
+  }
+  50% {
+      bottom: 180px;
+  }
+  60% {
+      bottom: 180px;
+  }
+  100% {
+      bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+      right: -550px;
+  }
+  to {
+      right: 100%;
+  }
+}
+.game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+
+}
